@@ -52,7 +52,10 @@ const HomeInfoRow = () => {
                 <img src={images[0]} alt="Info 1" className="row-image"/>
             </div>
             <div className="row-item">
-                <p className="row-text">test</p>
+                <p className="row-text">Track Your Progress. </p>
+                <p className="row-text">Discover New Anime. </p>
+                <p className="row-text">All In One Place.</p>
+
             </div>
             <div className="row-item">
                 <img src={images[1]} alt="Info 2" className="row-image"/>
@@ -67,10 +70,6 @@ export default function Home() {
             <h1>Welcome to Anime Quest Tracker</h1>
             <ImageCarousel />
             <HomeInfoRow />
-            <div className="btn-row">
-                <button className="login-btn">login</button>
-                <button className="sign-up-btn">sign up</button>
-            </div>
         </div>
     );
 }
