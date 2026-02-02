@@ -12,7 +12,7 @@ export default function Landing() {
       />
       <div className="landing">
         <h1>Landing Page</h1>
-        <p>This is the landing page</p>
+        <button className="add-anime-btn">Add Anime</button>
       </div>
     </>
   );
