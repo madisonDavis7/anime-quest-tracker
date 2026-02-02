@@ -1,20 +1,18 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Taskbar from './components/Taskbar/Taskbar';
+import Landing from './pages/Landing/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <Taskbar
-        items={[
-          { label: 'Login', href: '#' },
-          { label: 'Sign Up', href: '#' }
-        ]}
-      />
-      <header className="App-header">
-        < Home/>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/landing" element={<Landing />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

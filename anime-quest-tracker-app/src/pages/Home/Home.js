@@ -1,8 +1,8 @@
-import React from 'react';
 import './Home.css';
 import Slider from 'react-slick';
 import testImage from '../../images/test.jpg';
 import testImage2 from '../../images/test2.jpg';
+import Taskbar from '../../components/Taskbar/Taskbar';
 
 
 //home page components
@@ -66,10 +66,19 @@ const HomeInfoRow = () => {
 
 export default function Home() {
     return (
-        <div className="home">
-            <h1>Welcome to Anime Quest Tracker</h1>
-            <ImageCarousel />
-            <HomeInfoRow />
-        </div>
+        <>
+            <Taskbar
+                items={[
+                    { label: 'Home', to: '/' },
+                    { label: 'Login', to: '/landing' },
+                    { label: 'Sign Up', to: '#' }
+                ]}
+            />
+            <div className="home">
+                <h1>Welcome to Anime Quest Tracker</h1>
+                <ImageCarousel />
+                <HomeInfoRow />
+            </div>
+        </>
     );
 }

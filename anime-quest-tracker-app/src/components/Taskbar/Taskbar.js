@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Taskbar.css';
 
 const Taskbar = ({
@@ -11,6 +12,7 @@ const Taskbar = ({
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0
 }) => {
+  const navigate = useNavigate();
   const containerRef = useRef(null);
   const navRef = useRef(null);
   const filterRef = useRef(null);
@@ -93,10 +95,10 @@ const Taskbar = ({
     textRef.current.innerText = element.innerText;
   };
 
-  const handleClick = (e, index) => {
+  const handleClick = (e, index, item) => {
+    e.preventDefault();
     const liEl = e.currentTarget;
-    if (activeIndex === index) return;
-
+    
     setActiveIndex(index);
     updateEffectPosition(liEl);
 
@@ -114,6 +116,10 @@ const Taskbar = ({
 
     if (filterRef.current) {
       makeParticles(filterRef.current);
+    }
+
+    if (item.to && item.to !== '#') {
+      navigate(item.to);
     }
   };
 
@@ -152,7 +158,7 @@ const Taskbar = ({
         <ul ref={navRef}>
           {items.map((item, index) => (
             <li key={index} className={activeIndex === index ? 'active' : ''}>
-              <a href={item.href} onClick={e => handleClick(e, index)} onKeyDown={e => handleKeyDown(e, index)}>
+              <a href={item.to || '#'} onClick={e => handleClick(e, index, item)} onKeyDown={e => handleKeyDown(e, index)}>
                 {item.label}
               </a>
             </li>
