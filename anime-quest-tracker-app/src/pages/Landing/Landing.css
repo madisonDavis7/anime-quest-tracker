@@ -1,4 +1,29 @@
-
 .landing {
     color: white;
+}
+
+.add-anime-btn {
+    border-radius: 100vw;
+    position: relative;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 0 0.5px 1.5px transparent;
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    padding: 0.6em 1em;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.add-anime-btn:hover {
+    box-shadow: 0 0 0.5px 1.5px rgba(255, 255, 255, 0.5);
+}
+
+.add-anime-btn:focus-visible {
+    box-shadow: 0 0 0.5px 1.5px rgb(144, 0, 255);
+    outline: none;
 }

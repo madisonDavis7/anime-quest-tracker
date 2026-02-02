@@ -1,7 +1,14 @@
 import './Landing.css';
 import Taskbar from '../../components/Taskbar/Taskbar';
+import AnimatedButton from '../../components/AnimatedButton/AnimatedButton';
+import AddAnimeModal from '../../components/AddAnimeModal/AddAnimeModal';
+import AnimeList from '../../components/AnimeList/AnimeList';
+
 
 export default function Landing() {
+  const animeList = [];
+  const handleAddAnime = () => {};
+
   return (
     <>
       <Taskbar 
@@ -12,7 +19,11 @@ export default function Landing() {
       />
       <div className="landing">
         <h1>Landing Page</h1>
-        <button className="add-anime-btn">Add Anime</button>
+        <AddAnimeModal
+          onSubmit={handleAddAnime}
+          trigger={<AnimatedButton label="Add Anime" />}
+        />
+        <AnimeList items={animeList} />
       </div>
     </>
   );
