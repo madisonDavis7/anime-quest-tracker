@@ -118,8 +118,11 @@ const Taskbar = ({
       makeParticles(filterRef.current);
     }
 
+    //waits for animation to finsih before going to new page
     if (item.to && item.to !== '#') {
-      navigate(item.to);
+      setTimeout(() => {
+        navigate(item.to);
+      }, animationTime);
     }
   };
 
